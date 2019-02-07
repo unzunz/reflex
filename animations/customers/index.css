@@ -1,0 +1,115 @@
+img {
+  height: 60px;
+  max-width: 120px;
+  align-self: center; 
+}
+
+.customers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.customers__overlay {
+  font-size: 100px;
+  z-index: 1;
+  position: absolute;
+  opacity: 0;
+  margin: auto;
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #737373;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+
+  display: flex;
+}
+
+.logo {
+  padding: 24px;
+}
+
+.arrow {
+  height: 22px;
+  width: 22px;
+  padding: 0 6px;
+}
+
+.shrinking { 
+  animation: shrink 200ms ease-in-out forwards, blur 200ms ease-in-out forwards;
+}
+
+@keyframes shrink {
+  100% {
+    transform: scale(.95);
+  }
+}
+
+.growing {
+  animation: grow 200ms ease-in-out forwards, focus 500ms ease-in-out forwards; 
+}
+
+@keyframes grow {
+  100% {
+    transform: scale(1);
+  }
+}
+
+.blurring {
+  animation: blur 200ms ease-in-out forwards;
+}
+
+@keyframes blur { 
+  100% {
+    filter: blur(5px);
+  }
+}
+
+.focusing {
+  animation: focus 500ms ease-in-out forwards;
+}
+
+@keyframes focus { 
+  0% {
+    filter: blur(5px);
+    transform: scale(.95);
+  }
+  100% {
+    filter: blur(0);
+    transform: scale(1);
+  }
+}
+
+.showing { 
+  animation: show 200ms forwards;
+}
+
+@keyframes show { 
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.hiding { 
+  animation: hide 200ms;
+}
+
+@keyframes hide { 
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  
+}
