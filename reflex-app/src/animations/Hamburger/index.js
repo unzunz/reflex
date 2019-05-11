@@ -5,9 +5,13 @@ import * as animationData from './data.json' ;
 
 const Button = styled.button`
   background: transparent;
-  width: 54px;
+  width: ${props => props.size || "54px"};
   border: none;
   cursor: pointer;
+
+  path {
+    fill: ${props => props.color || "#4F4F4F"};
+  }
 `;
 
 class Hamburger extends PureComponent {
@@ -16,6 +20,8 @@ class Hamburger extends PureComponent {
    this.burgerRef = React.createRef();
    this.animation = null;
    this.state = {isBurger: false};
+   this.color = '';
+   this.size = '';
 
    this.handleOnClick = this.handleOnClick.bind(this);
    this.createAnimation = this.createAnimation.bind(this);
@@ -58,7 +64,7 @@ class Hamburger extends PureComponent {
   }
 
   render() {
-    return <Button onClick={this.handleOnClick} ref={this.burgerRef} />;
+    return <Button color={this.props.color} size={this.props.size} onClick={this.handleOnClick} ref={this.burgerRef} />;
   }
 }
 

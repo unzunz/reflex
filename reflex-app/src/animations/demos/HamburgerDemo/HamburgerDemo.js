@@ -123,21 +123,21 @@ class HamburgerExamples extends Component {
       <ExamplesContainer>
         <Grid>
           <HamburgerBox background={'#FFFFFF'}>
-            <Hamburger/>
+            <Hamburger size="42px"/>
           </HamburgerBox>
           <HamburgerBox background={'#4F4F4F'}>
-            <Hamburger/>
+            <Hamburger size="42px" color="white"/>
           </HamburgerBox>
           <HamburgerBox background={'#111111'}>
-            <Hamburger/>
+            <Hamburger size="42px" color="white"/>
           </HamburgerBox>
           <HamburgerBox background={'#FFFFFF'}>
-            <Hamburger/>
+            <Hamburger size="42px" color="#7567F7"/>
           </HamburgerBox>
         </Grid>
         <Feed>
           <HamburgerWrapper>
-            <Hamburger onClick={this.handleOnClick}/>
+            <Hamburger size="42px" onClick={this.handleOnClick}/>
           </HamburgerWrapper>
           <HeaderContainer>
             <Title>Good Morning!</Title>
