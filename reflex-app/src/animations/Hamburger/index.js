@@ -20,9 +20,7 @@ class Hamburger extends PureComponent {
    this.burgerRef = React.createRef();
    this.animation = null;
    this.state = {isBurger: false};
-   this.color = '';
-   this.size = '';
-
+   
    this.handleOnClick = this.handleOnClick.bind(this);
    this.createAnimation = this.createAnimation.bind(this);
   }
