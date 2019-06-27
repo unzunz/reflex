@@ -1,0 +1,124 @@
+.container {
+    padding: 100px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-gap: 30px;
+    overflow:hidden;
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    background-color: #eeeeee;
+    overflow: hidden
+}
+
+.box__picture {
+    height: 400px;
+}
+
+.box__title {
+    height: 100px;
+}
+
+.fadeIn { 
+    visibility: hidden;
+    animation-name: fadeIn, moveUp;
+    animation-fill-mode: forwards;
+    animation-duration: .5s;
+    animation-timing-function: ease-in-out; 
+}
+
+.fadeIn--delay1 {
+    animation-delay: 200ms, 200ms;
+}
+
+.fadeIn--delay2 {
+    animation-delay: 400ms, 400ms;
+}
+
+.fadeIn--delay3 {
+    animation-delay: 600ms, 600ms;
+}
+
+.fadeIn--delay4 {
+    animation-delay: 800ms, 800ms;
+}
+
+
+.line {
+    width: 100%;
+    height: 100%;
+    background-color: #eeeeee;
+    height: 2px;
+    overflow: hidden
+}
+
+.shimmer { 
+    width: 100%; 
+    animation-delay: 500ms;
+    animation-name: shimmer;
+    visibility: hidden;
+    animation-duration: 2s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+}
+
+.shimmer--delay1 { 
+    animation-delay: 700ms;
+}
+
+.shimmer--delay2 { 
+    animation-delay: 900ms;
+}
+
+.shimmer--delay3 { 
+    animation-delay: 1100ms;
+}
+
+.shimmer--delay4 { 
+    animation-delay: 1300ms;
+}
+
+.shimmer__bar {
+    height: 2px;
+    width: 30%; 
+    max-width: 150px;
+    min-width: 50px;
+    background:#a2a2a2;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-25%);
+    }
+    
+    /* Force delay between iterations */
+    50%, 100% {
+        visibility: visible;
+        transform: translateX(100%);
+    }
+  }
+
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+@keyframes moveUp {
+    0% {
+        transform: translateY(20%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
