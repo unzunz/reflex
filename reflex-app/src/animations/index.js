@@ -13,7 +13,7 @@ export default [
   HamburgerDemo,
   ToggleDemo,
   PlayPauseDemo,
-  // FormInputSuccessDemo,
+  FormInputSuccessDemo,
   // SocialLineIcons,
   NotificationBellDemo,
   CheckboxDemo,

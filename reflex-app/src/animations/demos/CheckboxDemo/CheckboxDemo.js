@@ -64,10 +64,12 @@ const CheckboxItem = styled.div`
 
 class CheckboxExamples extends Component {
   render() {
+
     return (
       <List>
         <Title>Todo List</Title>
         <CheckboxItem>
+          <CheckboxMainDemo></CheckboxMainDemo>
           <CheckboxMainDemo></CheckboxMainDemo>
           Write Jeff's birthday card
         </CheckboxItem>
