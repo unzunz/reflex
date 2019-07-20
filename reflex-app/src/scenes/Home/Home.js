@@ -114,9 +114,8 @@ const ContentContainer = styled.div`
   grid-gap: 15px 20px;
 
   @media ${device.tablet} {
-    grid-template-columns: 0 1fr;
-    grid-gap: 0;
-    width: 100%;
+    display: flex;
+    align-items: center;
   }
 `
 

@@ -45,11 +45,6 @@ const Card = styled.div`
   animation: ${({ isActive }) => isActive && 
     css`${scaleUp} .5s forwards;
     `}
-
-  @media ${device.tablet} {
-    margin: 0 !important;
-    width: 100%;
-  }
 `;
 
 const Title = styled.div`
@@ -63,7 +58,6 @@ const Title = styled.div`
 const DemosContainer = styled.div`
   display: flex;
   flex-flow: row wrap;
-  align-items: center;
 `;
 
 const MainDemo = styled.div`
@@ -82,9 +76,10 @@ const ExamplesContainer = styled.div`
   display:flex;
   flex-direction: column;
   flex: 0 1 auto;
+  margin: 0 0 0 24px;
 
-  @media ${device.tablet} {
-    width: 100%;
+  @media ${device.mobileL} {
+    margin: 24px 0 0 0;
   }
 `;
 

@@ -22,13 +22,25 @@ class PlayPauseDemo extends Component {
   }
 }
 
+const size = {
+  mobileL: '462px',
+  tablet: '768px',
+  laptop: '1024px',
+}
+
+export const device = {
+  mobileL: `(max-width: ${size.mobileL})`,
+  tablet: `(max-width: ${size.tablet})`,
+  laptop: `(min-width: ${size.laptop})`,
+};
+
 const ExamplesContainer = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
 const Player = styled.div`
-  width: 372px;
+  width: 100%;
   height: 36px;
   background-color: #4F4F4F;
   border-radius: 3px;
@@ -37,6 +49,10 @@ const Player = styled.div`
   padding: 0 6px;
   font-size: 10px;
   color: white;
+
+  @media ${device.mobileL} {
+    width: 100%;
+  }
 `;
 
 const Tracker = styled.div`

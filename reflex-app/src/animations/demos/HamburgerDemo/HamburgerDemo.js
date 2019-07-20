@@ -22,9 +22,21 @@ class HamburgerDemo extends Component {
   }
 }
 
+const size = {
+  mobileL: '462px',
+  tablet: '768px',
+  laptop: '1024px',
+}
+
+export const device = {
+  mobileL: `(max-width: ${size.mobileL})`,
+  tablet: `(max-width: ${size.tablet})`,
+  laptop: `(min-width: ${size.laptop})`,
+};
+
 const ExamplesContainer = styled.div`
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   align-items: start;
 `;
 
@@ -51,7 +63,7 @@ const HamburgerBox = styled.div.attrs({
 const Feed = styled.div`
   position: relative;
   background-color: #F2F2F2;
-  margin-left: 18px;
+  margin-top: 18px;
   border-radius: 3px;
   height: 230px;
   width: 250px;

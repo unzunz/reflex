@@ -4,6 +4,7 @@ import LoadingLines from '../../LoadingLines'
 
 const ExamplesContainer = styled.div`
   display: flex;
+  flex-flow: column wrap;
 `;
 
 const Box = styled.div`
@@ -15,7 +16,7 @@ const Box = styled.div`
   justify-content: center;
   border-radius: 3px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
-  margin-right: 18px;
+  margin-bottom: 18px;
 `;
 
 class LoadingExamples extends Component {
