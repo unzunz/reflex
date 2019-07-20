@@ -23,8 +23,8 @@ class HamburgerDemo extends Component {
 }
 
 const ExamplesContainer = styled.div`
-  display: grid;
-  grid-template-columns: 132px 1fr;
+  display: flex;
+  flex-flow: row wrap;
   align-items: start;
 `;
 

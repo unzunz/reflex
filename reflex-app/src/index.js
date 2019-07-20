@@ -28,6 +28,16 @@ const theme = {
 
 };
 
+const size = {
+  mobileS: '320px',
+  mobileM: '375px',
+  mobileL: '425px',
+  tablet: '768px',
+  laptop: '1024px',
+  laptopL: '1440px',
+  desktop: '2560px'
+}
+
 const GlobalStyle = createGlobalStyle`
     @import url('https://rsms.me/inter/inter-ui.css');
     @import url("https://fonts.googleapis.com/css?family=Inconsolata:400,700");
@@ -35,6 +45,10 @@ const GlobalStyle = createGlobalStyle`
     * {
       box-sizing: border-box;
       -webkit-font-smoothing: antialiased;
+    }
+
+    html {
+      height: 100%;
     }
 
     body {
@@ -45,6 +59,9 @@ const GlobalStyle = createGlobalStyle`
       color:  ${theme.colors.darkGray};
       font-size: 14px;
       line-height: 1.2;
+      height: 100%;
+      overflow-y: auto;
+      overflow-x: hidden;
     }
 
     a {
@@ -95,3 +112,14 @@ ReactDOM.render(
     </ThemeProvider>, 
     document.getElementById('root'));
 registerServiceWorker();
+
+export const device = {
+  mobileS: `(min-width: ${size.mobileS})`,
+  mobileM: `(min-width: ${size.mobileM})`,
+  mobileL: `(min-width: ${size.mobileL})`,
+  tablet: `(min-width: ${size.tablet})`,
+  laptop: `(min-width: ${size.laptop})`,
+  laptopL: `(min-width: ${size.laptopL})`,
+  desktop: `(min-width: ${size.desktop})`,
+  desktopL: `(min-width: ${size.desktop})`
+};

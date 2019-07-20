@@ -11,11 +11,29 @@ import AnimationCard from '../../components/AnimationCard';
 
 import * as animationData from '../../animations/LandingBG/data.json';
 
+const size = {
+  mobileL: '462px',
+  tablet: '768px',
+  laptop: '1024px',
+}
+
+export const device = {
+  mobileL: `(max-width: ${size.mobileL})`,
+  tablet: `(max-width: ${size.tablet})`,
+  laptop: `(min-width: ${size.laptop})`,
+};
+
 const Wrapper = styled.div`
   margin: auto;
   max-width: 80vw;
   padding: 18px;
   height: 100%;
+
+  @media ${device.tablet} {
+    max-width: 100vw;
+    display: flex;
+    flex-flow: column wrap;
+  }
 `;
 
 const LandingContainer = styled.div`
@@ -23,6 +41,10 @@ const LandingContainer = styled.div`
   height: 100vh;
   flex-flow: column wrap;
   justify-content: center;
+
+  @media ${device.tablet} {
+    width: 100%;
+  }
 `;
 
 const Title = styled.div`
@@ -30,6 +52,7 @@ const Title = styled.div`
   font-weight: 500;
   color: #7567F7; //CONSTANT
   margin: 24px 0;
+
 `;
 
 const Subtitle = styled.div`
@@ -39,6 +62,10 @@ const Subtitle = styled.div`
   margin-bottom: 48px;
   line-height: 1.5;
   width: 36vw;
+
+  @media ${device.tablet} {
+    width: 100%;
+  }
 `;
 
 const CTAcontainer = styled.div`
@@ -85,6 +112,12 @@ const ContentContainer = styled.div`
   grid-template-areas:
     "table carousel";
   grid-gap: 15px 20px;
+
+  @media ${device.tablet} {
+    grid-template-columns: 0 1fr;
+    grid-gap: 0;
+    width: 100%;
+  }
 `
 
 const TableOfContents = styled.div`
@@ -107,11 +140,21 @@ const TableOfContents = styled.div`
   a.selected {
     color: white !important;
   }
+
+  @media ${device.tablet} {
+    display: none;
+  }
 `
 
 const AnimationContainer = styled.div`
   grid-area: carousel;
   align-items: center;
+
+  @media ${device.tablet} {
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+  }
 `;
 
 const ScrollButton = styled.button`
