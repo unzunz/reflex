@@ -70,7 +70,10 @@ const Progress = styled.div`
 `;
 
 const VideoPlayerContainer = styled.div`
+  display: flex;
+  position: relative;
   margin-top: 24px;
+
 `;
 
 const VideoPlayer = styled.video`
@@ -80,7 +83,26 @@ const VideoPlayer = styled.video`
   border-radius: 3px;
 `;
 
+const PlayPause2 = styled(PlayPause)`
+  z-index: 1;
+  position: absolute;
+  bottom: 10px;
+  &::-webkit-media-controls-overlay-play-button {
+    display: none;
+  }
+  
+`;
+
 class PlayPauseExamples extends Component {
+  handleClick = () => {
+    if (this.refs.vidRef.paused == true) {
+      // Play the video
+      this.refs.vidRef.play();
+    } else {
+      // Pause the video
+      this.refs.vidRef.pause();
+    }
+  }
 
   render() {
     return (
@@ -93,9 +115,9 @@ class PlayPauseExamples extends Component {
           3:03
         </Player>
         <VideoPlayerContainer>
-          <VideoPlayer id="video" controls autoPlay>
+          <PlayPause2 color="white" id="play-pause" data-state="play" onClick={this.handleClick}/>
+          <VideoPlayer ref="vidRef" id="video" controls  noremoteplayback>
             <source src={exampleVideo}></source>
-            <PlayPause id="play-pause" data-state="play"/>
           </VideoPlayer>
         </VideoPlayerContainer>
       </ExamplesContainer>
